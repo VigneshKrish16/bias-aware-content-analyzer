@@ -1,4 +1,3 @@
-Got it ✅ — here’s your **fully clean, 100% Markdown-formatted README** so you can copy and paste directly into your GitHub repo without any stray formatting issues.
 
 ```markdown
 # 📰 Bias-Aware Content Retrieval and Analysis Tool
@@ -136,3 +135,4 @@ Analyzes a search query, retrieves bias-aware results, clusters them, and return
 
 If you want, I can now also **embed an architecture diagram in Markdown** so your GitHub README looks even more professional. That way, viewers can visually understand how retrieval → clustering → bias detection works.
 ```
+
