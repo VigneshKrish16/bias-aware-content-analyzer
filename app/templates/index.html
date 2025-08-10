@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equitable AI - Bias-Resistant RAG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Equitable AI</h1>
+            <p>Bias-Resistant Retrieval-Augmented Generation System</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="input-section">
+            <h2>Analyze Content for Bias</h2>
+            <form id="analysis-form">
+                <div class="form-group">
+                    <label for="query">Enter your query:</label>
+                    <textarea id="query" name="query" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="domain">Select domain:</label>
+                    <select id="domain" name="domain">
+                        <option value="general">General Information</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="finance">Finance</option>
+                        <option value="education">Education</option>
+                    </select>
+                </div>
+                
+                <button type="submit">Analyze for Bias</button>
+            </form>
+        </section>
+
+        <section class="results-section" id="results" style="display: none;">
+            <h2>Analysis Results</h2>
+            
+            <div class="metrics-container">
+                <div class="metric-card biq">
+                    <h3>Bias Intelligence Quotient (BiQ)</h3>
+                    <div class="metric-value" id="biq-value">0.00</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="biq-fill"></div>
+                    </div>
+                    <p class="metric-description">Measures overall bias in content</p>
+                </div>
+                
+                <div class="metric-card cfs">
+                    <h3>Content Fairness Score (CFS)</h3>
+                    <div class="metric-value" id="cfs-value">0.00</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="cfs-fill"></div>
+                    </div>
+                    <p class="metric-description">Evaluates fairness across groups</p>
+                </div>
+                
+                <div class="metric-card cds">
+                    <h3>Content Diversity Score (CDS)</h3>
+                    <div class="metric-value" id="cds-value">0.00</div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="cds-fill"></div>
+                    </div>
+                    <p class="metric-description">Assesses diversity of perspectives</p>
+                </div>
+            </div>
+            
+            <div class="detailed-results">
+                <h3>Bias-Aware Documents</h3>
+                <div class="document-list" id="document-list"></div>
+                
+                <div class="visualization">
+                    <h3>Bias Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="bias-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Equitable AI Framework - Bias-Resistant RAG System</p>
+            <p>Based on research by Vignesh K, et al.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
